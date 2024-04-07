@@ -1,0 +1,116 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto';
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* fraction */
+.fraction {
+    display: inline-block;
+    text-align: center;
+}
+
+.bottom {
+    border-top: 1px solid #000;
+    display: block;
+}
+
+/* answer  */
+
+.contents {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contents .content .question {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.contents .content .question .question-img {
+    display: block;
+    max-width: 250px;
+}
+
+.contents .content .question .question-content .fraction {
+    position: relative;
+    top: 10px;
+    margin: 0 3px;
+}
+
+.contents .content .question .question-content em {
+    font-style: normal;
+    font-size: 20px;
+    padding: 0 5px;
+}
+
+.contents .content .answerGroup {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.contents .content .answerGroup .answer .num::before {
+    font-weight: 500;
+}
+
+.contents .content .answerGroup .answer:nth-child(1) .num::before {
+    content: 'A.';
+    display: inline;
+}
+
+.contents .content .answerGroup .answer:nth-child(2) .num::before {
+    content: 'B.';
+    display: inline;
+}
+
+.contents .content .answerGroup .answer:nth-child(3) .num::before {
+    content: 'C.';
+    display: inline;
+}
+
+.contents .content .answerGroup .answer:nth-child(4) .num::before {
+    content: 'D.';
+    display: inline;
+}
+
+.contents .content .answerGroup .answer:nth-child(5) .num::before {
+    content: 'E.';
+    display: inline;
+}
+
+.contents .content .answerGroup .answer:nth-child(6) .num::before {
+    content: 'F.';
+    display: inline;
+}
+
+.contents .content .answerGroup .answer {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.contents .content .answerGroup .answer .num {
+    position: relative;
+}
+
+.contents .content .answerGroup .answer .num.select::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid red;
+    left: -10px;
+    top: -5px;
+}
