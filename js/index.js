@@ -1,5 +1,6 @@
 const fraction = document.querySelectorAll('.fraction');
 const answers = document.querySelectorAll('.answer');
+const btnCheck = document.querySelector('#btnCheck');
 
 fraction.forEach(function (e) {
     let split = e.innerHTML.split("/");
@@ -35,3 +36,28 @@ function handleAnswerClick() {
 answers.forEach(function (answer) {
     answer.addEventListener('click', handleAnswerClick);
 });
+
+btnCheck.addEventListener('click', handleSubmit);
+
+function handleSubmit() {
+    const answerGroups = document.querySelectorAll('.answerGroup');
+
+    answerGroups.forEach((answerGroup, groupIndex) => {
+        const answers = answerGroup.querySelectorAll('.answer');
+
+        let isSelectChildOfAns = false;
+
+        answers.forEach((answer, index) => {
+            const isSelectChild = answer.querySelector('.select') !== null;
+
+            const hasAnsClass = answer.classList.contains('ans');
+
+            if (hasAnsClass && isSelectChild) {
+                isSelectChildOfAns = true;
+            }
+        });
+
+        // Log the result for this answerGroup
+        console.log(`Answer Group ${groupIndex + 1}: ${isSelectChildOfAns}`);
+    });
+}
