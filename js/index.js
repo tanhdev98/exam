@@ -54,9 +54,11 @@ function handleSubmit() {
 
             if (hasAnsClass && isSelectChild) {
                 isSelectChildOfAns = true;
+                answer.classList.add('true');
+            } else {
+                answer.classList.add('false');
             }
         });
-
         // Log the result for this answerGroup
         console.log(`Answer Group ${groupIndex + 1}: ${isSelectChildOfAns}`);
     });
