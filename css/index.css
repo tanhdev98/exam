@@ -153,9 +153,8 @@ body {
 }
 
 /* btn check */
-.btn-check {
+.btn {
     appearance: button;
-    background-color: #1899D6;
     border: solid transparent;
     border-radius: 16px;
     border-width: 0 0 4px;
@@ -184,9 +183,8 @@ body {
     width: 500px;
 }
 
-.btn-check:after {
+.btn:after {
     background-clip: padding-box;
-    background-color: #1CB0F6;
     border: solid transparent;
     border-radius: 16px;
     border-width: 0 0 4px;
@@ -199,21 +197,37 @@ body {
     z-index: -1;
 }
 
-.btn-check:main,
-.btn-check:focus {
+.btn:main,
+.btn:focus {
     user-select: auto;
 }
 
-.btn-check:hover:not(:disabled) {
+.btn:hover:not(:disabled) {
     filter: brightness(1.1);
     -webkit-filter: brightness(1.1);
 }
 
-.btn-check:disabled {
+.btn:disabled {
     cursor: auto;
 }
 
-.btn-check:active {
+.btn:active {
     border-width: 4px 0 0;
     background: none;
+}
+
+.btn-check::after {
+    background-color: #1CB0F6;
+}
+
+.btn-check {
+    background-color: #1899D6;
+}
+
+.btn-reset {
+    background-color: #9b254c;
+}
+
+.btn-reset::after {
+    background-color: #f0003c;
 }
