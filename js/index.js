@@ -3,6 +3,9 @@ const answers = document.querySelectorAll('.answer');
 const btnCheck = document.querySelector('#btnCheck');
 const btnReset = document.querySelector('#btnReset');
 const answerGroups = document.querySelectorAll('.answerGroup');
+const tipBtn = document.querySelectorAll('.tip');
+const popupCloseBtn = document.querySelectorAll('.popup-close-btn');
+const popupGroup = document.querySelector('.popupGroup ');
 
 fraction.forEach(function (e) {
     let split = e.innerHTML.split("/");
@@ -42,6 +45,9 @@ answers.forEach(function (answer) {
 btnCheck.addEventListener('click', handleSubmit);
 
 function handleSubmit() {
+    tipBtn.forEach(tipBtn => {
+        tipBtn.classList.add('active');
+    });
     answerGroups.forEach((answerGroup, groupIndex) => {
         const answers = answerGroup.querySelectorAll('.answer');
 
@@ -59,14 +65,15 @@ function handleSubmit() {
                 answer.classList.add('false');
             }
         });
-        // Log the result for this answerGroup
-        console.log(`Answer Group ${groupIndex + 1}: ${isSelectChildOfAns}`);
     });
 }
 
 btnReset.addEventListener('click', handleReset);
 
 function handleReset() {
+    tipBtn.forEach(tipBtn => {
+        tipBtn.classList.remove('active');
+    });
     answerGroups.forEach((answerGroup, index) => {
         const answers = answerGroup.querySelectorAll('.answer');
 
@@ -78,6 +85,25 @@ function handleReset() {
             }
         })
     })
+}
 
-    console.log('aaa');
+popupCloseBtn.forEach(btn => {
+    btn.addEventListener('click', handlePopupClose);
+});
+
+function handlePopupClose() {
+    this.parentNode.style.display = 'none';
+    popupGroup.classList.remove('active');
+}
+
+tipBtn.forEach((e) => {
+    e.addEventListener('click', handlePopup);
+});
+
+function handlePopup() {
+    const tipValue = this.getAttribute('data-tip');
+    const popup = document.querySelector(`.popup[data-pop="${tipValue}"]`);
+
+    popupGroup.classList.add('active');
+    popup.style.display = 'block';
 }

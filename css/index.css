@@ -34,6 +34,20 @@ body {
 .contents .content .question {
     margin-bottom: 10px;
     font-weight: 500;
+    position: relative;
+}
+
+.contents .content .question .tip {
+    position: absolute;
+    right: 0;
+    font-size: 25px;
+    color: #1CB0F6;
+    cursor: pointer;
+    display: none;
+}
+
+.contents .content .question .tip.active {
+    display: block;
 }
 
 .contents .content .question .question-img {
@@ -230,4 +244,70 @@ body {
 
 .btn-reset::after {
     background-color: #f0003c;
+}
+
+.btn-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* popupGroup */
+.popupGroup {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #00000080;
+    display: none;
+}
+
+.popupGroup.active {
+    display: block;
+}
+
+.popupGroup .popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto;
+    bottom: 0;
+    right: 0;
+    background: #fff;
+    width: 500px;
+    height: max-content;
+    border-radius: 20px;
+    display: none;
+}
+
+.popupGroup .popup .popup-close-btn {
+    color: #fff;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.popupGroup .popup .popup-header {
+    background-color: #1CB0F6;
+    color: #fff;
+    border-radius: 20px 20px 0 0;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.popupGroup .popup .popup-contents {
+    height: max-content;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
