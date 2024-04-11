@@ -310,4 +310,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+.popupGroup .popup .popup-contents ol li,
+.popupGroup .popup .popup-contents ul li {
+    margin-bottom: 10px;
 }
